@@ -11,14 +11,17 @@ const middleWare =require("../middleware/middleware")
 router.post("/createAuthor", authorController.createAuthor);
 
 //----------------------------------------------------------------------------------//
-// create an Blog Api
+// create a Blog Api
 
 router.post("/createBlog",middleWare.headerValidation, blogController.createBlog);
 router.get("/getBlogByParams",middleWare.headerValidation,blogController.getBlog)
 
 router.put("/updateBlog/:blogId",middleWare.headerValidation,blogController.updatedBlog)
-router.put("/deleteBlog/:blogId",middleWare.headerValidation,blogController.deletedBlog)
-router.put("/deleteBlog",middleWare.headerValidation,blogController.deletedBlogByParams)
+router.delete("/deleteBlog/:blogId",middleWare.headerValidation,blogController.deletedBlog)
+router.delete("/deleteBlog",middleWare.headerValidation,blogController.deletedBlogByParams)
+
+//----------------------------------------------------------------------------------//
+// create a login Api
 
 router.post("/login",authorController.loginUser)
 module.exports = router;

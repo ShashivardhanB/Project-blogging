@@ -1,4 +1,4 @@
-const mongoose =require('mongoose')
+const mongoose = require('mongoose')
 
 const ObjectId =mongoose.Schema.Types.ObjectId    // refers to author id so we use this refrence is used here
 const blogSchema = new mongoose.Schema({
